@@ -1,27 +1,25 @@
-## 「告知くん」(Event promotional tool)
+# 告知くん
 
-イベントの開催＆支援ツールのソースコードです。
+PHPとSQLiteで動作する、登録不要のイベント告知・参加管理サービスです。
 
-デザインはBootstrap3、Font Awesome Iconsを使っています。
+## 必要な環境
 
-Bootstrapのプラグイン(bootstrap-datetimepicker.js、validator.jsなど)も使わせていただきました。
+- PHP 8.1以上
+- PDO SQLite拡張
+- mbstring拡張
+- Apache（`.htaccess`を利用する場合）
 
+## 公開方法
 
-### Usage
+1. `kokuchikun` フォルダの中身をレンタルサーバへアップロードします。
+2. `storage` フォルダを書き込み可能にします。一般的にはパーミッション `775`、サーバによっては `755` で動作します。
+3. ブラウザで `index.php` を開きます。初回アクセス時にSQLiteデータベースが自動作成されます。
+4. 試しにイベントを作成し、参加申込と主催者ログインを確認します。
 
-  - upload all files to the web server
+SQLiteファイルは `storage/kokuchikun.sqlite3` に保存されます。定期的にこのファイルをバックアップしてください。
 
+Apache以外のサーバでは、`storage` と `config.php` をWebから直接閲覧できないようサーバ側で設定してください。
 
-### Features
+## 旧版からの移行
 
-  - written in PHP
-
-
-### Demo
-
-  - http://kokuchi.tsukuba42195.top/
-
-
-### Licence
-
-  - Copyright 2016 Akira Mukai. Licensed under the MIT License
+旧版の `data/*.txt` は自動では読み込みません。公開前に必要な既存イベントがある場合は、別途移行スクリプトを用意してください。
