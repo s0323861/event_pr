@@ -1,5 +1,9 @@
 # 📣 告知くん
 
+<!-- 技術バッジ -->
+![PHP](https://img.shields.io/badge/PHP-%23777BB4.svg?style=flat&logo=php&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 PHPとSQLiteで動作する、登録不要のイベント告知・参加管理サービスです。
 
 ---
